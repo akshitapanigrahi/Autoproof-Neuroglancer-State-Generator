@@ -20,6 +20,8 @@
 
 ## Installation
 
+NOTE: `connects-neuvue` was forked locally and modified (to be updated in README soon) [adding issues to original connects-neuvue repo to come]
+
 1. **Initialize UV**:
 
    ```bash
