@@ -1,0 +1,33 @@
+# config.yaml
+# -------------
+# Dataset & API
+api_dataset: h01_c2                   # which connects_neuvue dataset to import
+aws_secret_name: ''                   # name of AWS secret (empty = use default aws.get_secret())
+
+# CAVE client
+cave_client_name: h01_c3_flat
+
+# S3 upload parameters
+bucket: neurd-datalake                # your S3 bucket
+s3_base_path: h01_autoproof/meshes    # root folder in S3 (will contain `info` and a subfolder for fragments)
+fragment_dir_name: mesh               # subfolder under s3_base_path for your .precomputed fragments
+
+# Meshes to upload
+segment_ids:                          # list of proofs to pull & upload
+  - 417502654
+  - 329209033
+
+# Viewer defaults
+viewer_dimensions: [8, 8, 30]
+image_layer_source: "precomputed://gs://h01-release/data/20210601/4nm_raw"
+image_layer_name:  "4nm_em"
+segmentation_layer_source: "precomputed://gs://h01-release/data/20210601/c2"
+segmentation_layer_name:  "c2_flat_segmentation"
+mesh_layer_name: "proofread_meshes"
+
+# Volume‑info parameters (used only to generate the `info` JSON)
+num_channels: 1
+resolution: [8, 8, 30]
+chunk_sizes:
+  - [64, 64, 64]
+size: [1, 1, 1]

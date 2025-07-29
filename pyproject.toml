@@ -1,0 +1,14 @@
+[project]
+name = "neurd-ng-state"
+version = "0.1.0"
+description = "Auto-Proofread Neuroglancer State Generator"
+requires-python = ">=3.8"
+
+[project.dependencies]
+boto3 = "*"
+numpy = "*"
+pyyaml = "*"
+cloudvolume = "*"
+caveclient = "*"
+nglui = "*"
+connects_neuvue = { url = "https://github.com/reimerlab/connects_neuvue.git", rev = "main" }
