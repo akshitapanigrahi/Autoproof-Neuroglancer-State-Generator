@@ -12,7 +12,6 @@
 * **Mesh Fetching & Upload:** Retrieve proofread meshes via the NEURD API, convert to CloudVolume fragments, and upload under `s3://{bucket}/{s3_base_path}/mesh/{segment_id}:0`.
 * **Info File Generation:** Create and upload the multiscale `info` JSON to `s3://{bucket}/{s3_base_path}/info` for mesh rendering.
 * **Skeleton Fetching & Transformation:**
-
   * Fetch raw proofread skeletons as point arrays.
   * Reshape to an `[N,3]` vertex list.
   * Use `numpy.unique` to deduplicate vertices and reconstruct edge indices.
@@ -20,8 +19,6 @@
 * **Viewer Link Construction:** Build a Neuroglancer URL via `nglui.statebuilder` and `CAVEclient`, combining EM image, flat segmentation, proofread meshes, and skeleton layers.
 
 ## Installation
-
-This project uses **UV** to manage and synchronize dependencies via a standard `pyproject.toml` file.
 
 1. **Initialize UV**:
 
@@ -34,9 +31,7 @@ This project uses **UV** to manage and synchronize dependencies via a standard `
    ```bash
    uv sync
    ```
-
-UV will read `pyproject.toml`, resolve and install all listed dependencies into your environment.
-
+   
 ### Prerequisites
 
 * **Python:** 3.8 or later
@@ -44,8 +39,6 @@ UV will read `pyproject.toml`, resolve and install all listed dependencies into 
 * **NGLui:** v4 (Note this only supports the latest version of NGLui, v4)
 
 ## Usage
-
-With your environment activated and `config.yaml` configured:
 
 ```bash
 python generate_ng_state.py --config config.yaml
